@@ -10,6 +10,7 @@ namespace GymSharp_Bercea_Anelise_Proiect.Models
         
             public int ID { get; set; }
             public int User_id { get; set; }
+            public int Exercise_id { get; set; }
             public DateTime Date { get; set; }
             public float Weight { get; set; }
             public float Body_fat_percentage { get; set; }

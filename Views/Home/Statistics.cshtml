@@ -1,0 +1,26 @@
+﻿@model IEnumerable<GymSharp_Bercea_Anelise_Proiect.Models.GymViewModels.WorkoutGroup>
+@{
+    ViewData["Title"] = "Workout Exercises Statistics";
+}
+<h2>Workout Exercises Statistics</h2>
+<table>
+    <tr>
+        <th>
+            Workout Date
+        </th>
+        <th>
+            Workout Exercises
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkoutDate)
+            </td>
+            <td>
+                @item.ExerciseCount
+            </td>
+        </tr>
+    }
+</table>

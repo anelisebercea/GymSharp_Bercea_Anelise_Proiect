@@ -11,10 +11,11 @@ namespace GymSharp_Bercea_Anelise_Proiect.Models
         public string Exercise_name { get; set; }
         public string Description { get; set; }
         public string Muscle_group { get; set; }
-        
-        
+        public string DifficultyLevel { get; set; }
 
-        public ICollection<Workout>? Workouts { get; set; }
+
+
+        public ICollection<Measurement>? Measurements { get; set; }
     }
 
 }

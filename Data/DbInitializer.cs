@@ -10,10 +10,393 @@ namespace GymSharp_Bercea_Anelise_Proiect.Data
         {
             using (var context = new GymContext(serviceProvider.GetRequiredService<DbContextOptions<GymContext>>()))
             {
+
+                if(context.Foods.Any())
+                { 
+                    return; 
+                }
+                context.Foods.AddRange(
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-01"),
+                    Food_name = "Protein Pancakes",
+                    Calories = 270,
+                    Protein = 15,
+                    Carbs = 20,
+                    Fats = 15
+                },
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-01"),
+                    Food_name = "Chiken Wrap",
+                    Calories = 340,
+                    Protein = 27,
+                    Carbs = 35,
+                    Fats = 12
+                },
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-01"),
+                    Food_name = "Salmon and Quinoa Salad",
+                    Calories = 400,
+                    Protein = 30,
+                    Carbs = 40,
+                    Fats = 15
+                },
+
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-02"),
+                    Food_name = "Egg White Omelette",
+                    Calories = 200,
+                    Protein = 18,
+                    Carbs = 2,
+                    Fats = 12
+                },
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-02"),
+                    Food_name = "Beef and Vegetable Stir Fry",
+                    Calories = 400,
+                    Protein = 30,
+                    Carbs = 25,
+                    Fats = 20
+                },
+
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-02"),
+                    Food_name = "Greek Yogurt and Berries",
+                    Calories = 150,
+                    Protein = 15,
+                    Carbs = 15,
+                    Fats = 5
+                }, 
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-03"),
+                    Food_name = "Egg and Spinach Omelette",
+                    Calories = 210,
+                    Protein = 15,
+                    Carbs = 10,
+                    Fats = 12
+                },
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-03"),
+                    Food_name = "Steak and Sweet Potato",
+                    Calories = 450,
+                    Protein = 35,
+                    Carbs = 40,
+                    Fats = 20
+                },
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-03"),
+                    Food_name = "Greek Salad",
+                    Calories = 250,
+                    Protein = 12,
+                    Carbs = 30,
+                    Fats = 15
+                }, 
+
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-04"),
+                    Food_name = "Protein Shake",
+                    Calories = 250,
+                    Protein = 25,
+                    Carbs = 15,
+                    Fats = 5
+                },
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-04"),
+                    Food_name = "Turkey and Avocado Wrap",
+                    Calories = 350,
+                    Protein = 25,
+                    Carbs = 20,
+                    Fats = 20
+                },
+
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-04"),
+                    Food_name = "Tuna Salad",
+                    Calories = 200,
+                    Protein = 20,
+                    Carbs = 15,
+                    Fats = 10
+                },
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-05"),
+                    Food_name = "Greek Yogurt and Berries",
+                    Calories = 150,
+                    Protein = 15,
+                    Carbs = 15,
+                    Fats = 5
+                },
+
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-05"),
+                    Food_name = "Grilled Chicken and Vegetables",
+                    Calories = 400,
+                    Protein = 30,
+                    Carbs = 30,
+                    Fats = 20
+                },
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-05"),
+                    Food_name = "Salmon and Quinoa Salad",
+                    Calories = 400,
+                    Protein = 30,
+                    Carbs = 40,
+                    Fats = 15
+                }, 
+
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-06"),
+                    Food_name = "Protein Shake",
+                    Calories = 250,
+                    Protein = 25,
+                    Carbs = 15,
+                    Fats = 5
+                },
+
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-06"),
+                    Food_name = "Salmon and Broccoli",
+                    Calories = 470,
+                    Protein = 30,
+                    Carbs = 25,
+                    Fats = 20
+                },
+
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-06"),
+                    Food_name = "Vegetable Stir Fry",
+                    Calories = 250,
+                    Protein = 15,
+                    Carbs = 25,
+                    Fats = 10
+                },
+
+
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-07"),
+                    Food_name = "Protein Pancakes",
+                    Calories = 270,
+                    Protein = 15,
+                    Carbs = 20,
+                    Fats = 15
+                },
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-07"),
+                    Food_name = "Beef and Vegetable Soup",
+                    Calories = 350,
+                    Protein = 30,
+                    Carbs = 20,
+                    Fats = 15
+                },
+
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-07"),
+                    Food_name = "Quinoa and Black Bean Salad",
+                    Calories = 400,
+                    Protein = 20,
+                    Carbs = 40,
+                    Fats = 15
+                },
+
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-08"),
+                    Food_name = "Greek Yogurt and Berries",
+                    Calories = 150,
+                    Protein = 15,
+                    Carbs = 15,
+                    Fats = 5
+                },
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-08"),
+                    Food_name = "Turkey and Avocado Wrap",
+                    Calories = 380,
+                    Protein = 25,
+                    Carbs = 30,
+                    Fats = 20
+                },
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-08"),
+                    Food_name = "Grilled Chicken Breast",
+                    Calories = 300,
+                    Protein = 25,
+                    Carbs = 5,
+                    Fats = 15
+                },
+
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-09"),
+                    Food_name = "Egg and Spinach Omelette",
+                    Calories = 210,
+                    Protein = 15,
+                    Carbs = 10,
+                    Fats = 12
+                },
+
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-09"),
+                    Food_name = "Steak and Sweet Potato",
+                    Calories = 450,
+                    Protein = 40,
+                    Carbs = 35,
+                    Fats = 20
+                },
+
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-09"),
+                    Food_name = "Shrimp and Vegetable Stir Fry",
+                    Calories = 300,
+                    Protein = 25,
+                    Carbs = 20,
+                    Fats = 10
+                },
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-10"),
+                    Food_name = "Protein Shake",
+                    Calories = 250,
+                    Protein = 25,
+                    Carbs = 15,
+                    Fats = 5
+                },
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-10"),
+                    Food_name = "Sushi Bowl",
+                    Calories = 500,
+                    Protein = 25,
+                    Carbs = 50,
+                    Fats = 20
+                },
+
+
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-10"),
+                    Food_name = "Salmon and Quinoa Salad",
+                    Calories = 400,
+                    Protein = 30,
+                    Carbs = 40,
+                    Fats = 15
+                },
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-11"),
+                    Food_name = "Egg and Spinach Omelette",
+                    Calories = 210,
+                    Protein = 15,
+                    Carbs = 10,
+                    Fats = 12
+                },
+
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-11"),
+                    Food_name = "Pork Tenderloin and Green Beans",
+                    Calories = 400,
+                    Protein = 35,
+                    Carbs = 25,
+                    Fats = 20
+                },
+                new Food
+                {
+                    User_id = 2,
+                    Date = DateTime.Parse("2023-01-11"),
+                    Food_name = "Grilled Chicken and Vegetables",
+                    Calories = 350,
+                    Protein = 30,
+                    Carbs = 25,
+                    Fats = 15
+                }
+                );
+
+                /*
+                ________________________________________________________
+
+                if(context.Users.Any())
+                { 
+                    return; 
+                }
+                context.Users.AddRange(
+                new User
+                {
+                    Username = "username1",
+                    Email = "user1@gym.com",
+                    Password = "User*1",
+                    Account_type = "Admin",
+                },
+                new User
+                {
+                    Username = "username2",
+                    Email = "user2@gym.com",
+                    Password = "User*2",
+                    Account_type = "Client",
+                }
+                );
+                _________________________________________________________
+
                 if (context.Exercises.Any())
                 {
                     return; // BD a fost creata anterior
                 }
+
+                
                 context.Exercises.AddRange(
                 new Exercise
                 {
@@ -313,7 +696,7 @@ namespace GymSharp_Bercea_Anelise_Proiect.Data
                     Muscle_group = "Arms",
                 }
                 );
-
+                */
 
                 context.SaveChanges();
             }

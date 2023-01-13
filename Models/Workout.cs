@@ -14,6 +14,8 @@ namespace GymSharp_Bercea_Anelise_Proiect.Models
         public int Sets { get; set; }
         public int Reps { get; set; }
         public int Weight { get; set; }
+        public string Level { get; set; }
+       
 
         public User? User { get; set; }
         public Exercise? Exercise { get; set; }

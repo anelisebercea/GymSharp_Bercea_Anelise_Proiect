@@ -4,6 +4,7 @@ using GymSharp_Bercea_Anelise_Proiect.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GymSharpBerceaAneliseProiect.Migrations
 {
     [DbContext(typeof(GymContext))]
-    partial class GymContextModelSnapshot : ModelSnapshot
+    [Migration("20230113193638_AddColumnsUsers")]
+    partial class AddColumnsUsers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -102,12 +105,6 @@ namespace GymSharpBerceaAneliseProiect.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("ExerciseID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Exercise_id")
-                        .HasColumnType("int");
-
                     b.Property<float>("Hips")
                         .HasColumnType("real");
 
@@ -121,8 +118,6 @@ namespace GymSharpBerceaAneliseProiect.Migrations
                         .HasColumnType("real");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("ExerciseID");
 
                     b.ToTable("Measurements", (string)null);
                 });
@@ -138,18 +133,8 @@ namespace GymSharpBerceaAneliseProiect.Migrations
                     b.Property<string>("Account_type")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
-
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Gender")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Height")
-                        .HasColumnType("int");
 
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
@@ -179,10 +164,6 @@ namespace GymSharpBerceaAneliseProiect.Migrations
                     b.Property<string>("Exercise_name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Level")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Reps")
                         .HasColumnType("int");
 
@@ -207,17 +188,10 @@ namespace GymSharpBerceaAneliseProiect.Migrations
                     b.ToTable("Workouts", (string)null);
                 });
 
-            modelBuilder.Entity("GymSharp_Bercea_Anelise_Proiect.Models.Measurement", b =>
-                {
-                    b.HasOne("GymSharp_Bercea_Anelise_Proiect.Models.Exercise", null)
-                        .WithMany("Measurements")
-                        .HasForeignKey("ExerciseID");
-                });
-
             modelBuilder.Entity("GymSharp_Bercea_Anelise_Proiect.Models.Workout", b =>
                 {
                     b.HasOne("GymSharp_Bercea_Anelise_Proiect.Models.Exercise", "Exercise")
-                        .WithMany()
+                        .WithMany("Workouts")
                         .HasForeignKey("ExerciseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -233,7 +207,7 @@ namespace GymSharpBerceaAneliseProiect.Migrations
 
             modelBuilder.Entity("GymSharp_Bercea_Anelise_Proiect.Models.Exercise", b =>
                 {
-                    b.Navigation("Measurements");
+                    b.Navigation("Workouts");
                 });
 
             modelBuilder.Entity("GymSharp_Bercea_Anelise_Proiect.Models.User", b =>
